@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Top Football Tips</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Reload</string>
+    <string name="free_bet_text">Free Tips</string>
+    <string name="vip_bet_text">VIP Tips</string>
+    <string name="risk_bet_text">Risk Tips</string>
+    <string name="danger_matches_text">Danger\nMatches</string>
+    <string name="rate_us_text">Rate Us</string>
+    <string name="get_vip">Get VIP</string>
+    <string name="betting_site_button">betting site button</string>
+    <string name="country_image_desc">country image</string>
+    <string name="img_logo_desc">logo image</string>
+
+    <string name="no_browser_text">There is no browser application</string>
+    <string name="title_activity_main">Top Football Tips</string>
+    <string name="loading_screen_title">Loading</string>
+    <string name="loading_screen_text">Wait while loading . . .</string>
+    <string name="notification_title">Top Football Tips News</string>
+
+</resources>

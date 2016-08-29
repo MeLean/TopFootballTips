@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#9D9799</color>
+    <color name="colorPrimaryDark">#433F40</color>
+    <color name="colorAccent">#FF6F6F</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="transparent_red">#66FF3333</color>
+    <color name="transparent_blue">#663F51B5</color>
+    <color name="transparent_green">#6600b300</color>
+    <color name="transparent_black">#66000000</color>
+    <color name="transparent_white">#AAFFFFFF</color>
+    <color name="transparent_black_dark">#AA000000</color>
+
+    <!-- match items colors -->
+    <color name="match_header_color">#88E1DF22</color>
+    <color name="match_details_stroke_color">#88E1DF22</color>
+</resources>
