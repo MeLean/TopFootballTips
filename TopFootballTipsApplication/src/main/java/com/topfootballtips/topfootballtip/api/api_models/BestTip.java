@@ -1,8 +1,5 @@
 package com.topfootballtips.topfootballtip.api.api_models;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 import java.util.Date;
 
 public class BestTip {
@@ -11,53 +8,36 @@ public class BestTip {
         //public constructor needed
     }
 
-    @SerializedName("TipResult")
-    @Expose
     private Integer tipResult;
-    @SerializedName("Comments")
-    @Expose
+
     private String comments;
-    @SerializedName("created")
-    @Expose
+
     private Date created;
-    @SerializedName("ownerId")
-    @Expose
+
     private String ownerId;
-    @SerializedName("Coef")
-    @Expose
+
     private String coef;
-    @SerializedName("Match")
-    @Expose
+
     private String match;
-    @SerializedName("Result")
-    @Expose
+
     private String result;
-    @SerializedName("__meta")
-    @Expose
+
     private String meta;
-    @SerializedName("MatchDate")
-    @Expose
+
     private String matchDate;
-    @SerializedName("___class")
-    @Expose
+
     private String _class;
-    @SerializedName("Country")
-    @Expose
+
     private String country;
-    @SerializedName("Tip")
-    @Expose
+
     private String tip;
-    @SerializedName("ID")
-    @Expose
+
     private Integer iD;
-    @SerializedName("updated")
-    @Expose
+
     private Date updated;
-    @SerializedName("objectId")
-    @Expose
+
     private String objectId;
-    @SerializedName("TipType")
-    @Expose
+
     private Integer tipType;
 
     /**

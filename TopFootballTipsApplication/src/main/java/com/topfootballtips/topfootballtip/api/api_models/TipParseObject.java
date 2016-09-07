@@ -1,8 +1,5 @@
 package com.topfootballtips.topfootballtip.api.api_models;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,17 +9,13 @@ public class TipParseObject {
         //public constructor needed
     }
 
-    @SerializedName("offset")
-    @Expose
+
     private Integer offset;
-    @SerializedName("data")
-    @Expose
+
     private List<BestTip> data = new ArrayList<BestTip>();
-    @SerializedName("nextPage")
-    @Expose
+
     private Object nextPage;
-    @SerializedName("totalObjects")
-    @Expose
+
     private Integer totalObjects;
 
     /**
