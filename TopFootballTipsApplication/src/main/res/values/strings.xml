@@ -20,5 +20,11 @@
     <string name="loading_screen_title">Loading</string>
     <string name="loading_screen_text">Wait while loading . . .</string>
     <string name="notification_title">Top Football Tips News</string>
+    <string name="error_occurred">"An error occurred: %1$s"</string>
+    <string name="there_is_noting_to_show">There is noting to show!</string>
+    <string name="error_loading">An Error occurred! Check your Internet connection and try again</string>
+    <string name="title_activity_get_vip">Get Vip</string>
+    <string name="get_vip_one">Get Vip For A Week</string>
+    <string name="get_vip_two">Get Vip For A Month</string>
 
 </resources>

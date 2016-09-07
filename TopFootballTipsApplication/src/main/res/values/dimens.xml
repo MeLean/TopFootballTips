@@ -5,6 +5,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
+    <dimen name="space_big">24dp</dimen>
     <dimen name="space_small">8dp</dimen>
     <dimen name="space_very_small">5dp</dimen>
     <dimen name="space_tiny">2dp</dimen>

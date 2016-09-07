@@ -2,34 +2,26 @@ package com.topfootballtips.topfootballtip.ui.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.topfootballtips.topfootballtip.R;
-import com.topfootballtips.topfootballtip.api.api_models.TipDatum;
+import com.topfootballtips.topfootballtip.api.api_models.BestTip;
 import com.topfootballtips.topfootballtip.constants.CountryName;
 import com.topfootballtips.topfootballtip.constants.Preferences;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 
-public class TipAdapter extends ArrayAdapter<TipDatum> implements View.OnClickListener {
+public class TipAdapter extends ArrayAdapter<BestTip> {
     private Context mContext;
     private int mResource;
 
-    public TipAdapter(Context context, int elementResource, List<TipDatum> tips) {
+    public TipAdapter(Context context, int elementResource, List<BestTip> tips) {
         super(context, elementResource,tips);
         this.mContext = context;
         this.mResource = elementResource;
@@ -37,7 +29,6 @@ public class TipAdapter extends ArrayAdapter<TipDatum> implements View.OnClickLi
 
     private static class ViewHolderItem {
         ImageView countyImage;
-        ImageButton bettingSiteButton;
         TextView county;
         TextView match;
         TextView matchResult;
@@ -57,7 +48,6 @@ public class TipAdapter extends ArrayAdapter<TipDatum> implements View.OnClickLi
 
             viewHolder = new ViewHolderItem();
             viewHolder.countyImage = (ImageView) convertView.findViewById(R.id.img_country_flag);
-            viewHolder.bettingSiteButton = (ImageButton) convertView.findViewById(R.id.btn_img_bet_site);
             viewHolder.county = (TextView) convertView.findViewById(R.id.tw_country);
             viewHolder.match = (TextView) convertView.findViewById(R.id.tw_match);
             viewHolder.matchResult = (TextView) convertView.findViewById(R.id.tw_result);
@@ -72,34 +62,19 @@ public class TipAdapter extends ArrayAdapter<TipDatum> implements View.OnClickLi
         }
 
         // object item based on the position
-        TipDatum tip = getItem(position);
+        BestTip tip = getItem(position);
 
         // assign values if the object is not null
         if(tip != null) {
             // get the TextView from the ViewHolder and then set the text (item name) and tag (item ID) values
             String countryText = tip.getCountry().trim();
             this.setImageTo(viewHolder.countyImage, countryText);
-            viewHolder.bettingSiteButton.setImageResource(R.drawable.ic_btn_betting_site);
-            viewHolder.bettingSiteButton.setOnClickListener(this);
             viewHolder.county.setText(countryText);
             viewHolder.match.setText(tip.getMatch());
             viewHolder.matchResult.setText(tip.getResult());
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Preferences.DATE_FORMAT, Locale.getDefault());
-            try {
-                viewHolder.matchDate.setText(dateFormat.format(new Date(tip.getMatchDate())));
-            } catch (NumberFormatException e){
-                e.printStackTrace();
-            }
-
-            viewHolder.coef.setText(String.format(Locale.getDefault(),"%.2f", tip.getCoef()));
+            viewHolder.matchDate.setText(tip.getMatchDate());
+            viewHolder.coef.setText(tip.getCoef());
             viewHolder.tip.setText(tip.getTip());
-
-            /*if (tip.getTipType() == Preferences.TIP_TYPE_NORMAL){
-                viewHolder.tip.setText(tip.getTip()); //normal tip text
-            } else if (tip.getTipType() == Preferences.TIP_TYPE_VIP){
-                viewHolder.tip.setText(String.format(Locale.getDefault(),"IMPLEMENT TIP %1$s : %2$s",Preferences.TIP_TYPE_VIP,tip.getTip()));
-            }*/
 
             int tipHit = 0;
             try {
@@ -108,11 +83,11 @@ public class TipAdapter extends ArrayAdapter<TipDatum> implements View.OnClickLi
                 e.printStackTrace();
             }
 
-            if(tipHit == 0) {
+            if(tipHit == Preferences.TIP_IS_WAITING_FOR_RESULT) {
                 viewHolder.tip.setBackgroundResource(R.drawable.shape_neutral_guessed_result);
-            }else if(tipHit == 1){
+            }else if(tipHit == Preferences.TIP_IS_GUESSED){
                 viewHolder.tip.setBackgroundResource(R.drawable.shape_guessed_result);
-            }else if(tipHit == 2){
+            }else if(tipHit == Preferences.TIP_IS_NOT_GUESSED){
                 viewHolder.tip.setBackgroundResource(R.drawable.shape_not_guessed_result);
             }
         }
@@ -165,22 +140,6 @@ public class TipAdapter extends ArrayAdapter<TipDatum> implements View.OnClickLi
             county_img.setImageResource(R.drawable.ic_united_states);
         } else {
             county_img.setImageResource(R.drawable.ic_default_img);
-        }
-    }
-
-
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        Context context = view.getContext();
-        if (id == R.id.btn_img_bet_site){
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(Preferences.BETTING_SITE_URL));
-            if (browserIntent.resolveActivity(context.getPackageManager()) != null) {
-                view.getContext().startActivity(browserIntent);
-            }else{
-                Toast.makeText(context, R.string.no_browser_text, Toast.LENGTH_LONG).show();
-            }
-            return;
         }
     }
 }

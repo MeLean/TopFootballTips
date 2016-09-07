@@ -3,23 +3,29 @@ package com.topfootballtips.topfootballtip.api.api_models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class TipDatum {
+import java.util.Date;
+
+public class BestTip {
+
+    public BestTip(){
+        //public constructor needed
+    }
 
     @SerializedName("TipResult")
     @Expose
     private Integer tipResult;
     @SerializedName("Comments")
     @Expose
-    private Object comments;
+    private String comments;
     @SerializedName("created")
     @Expose
-    private Long created;
+    private Date created;
     @SerializedName("ownerId")
     @Expose
-    private Object ownerId;
+    private String ownerId;
     @SerializedName("Coef")
     @Expose
-    private Double coef;
+    private String coef;
     @SerializedName("Match")
     @Expose
     private String match;
@@ -31,7 +37,7 @@ public class TipDatum {
     private String meta;
     @SerializedName("MatchDate")
     @Expose
-    private Long matchDate;
+    private String matchDate;
     @SerializedName("___class")
     @Expose
     private String _class;
@@ -46,7 +52,7 @@ public class TipDatum {
     private Integer iD;
     @SerializedName("updated")
     @Expose
-    private Object updated;
+    private Date updated;
     @SerializedName("objectId")
     @Expose
     private String objectId;
@@ -86,7 +92,7 @@ public class TipDatum {
      * @param comments
      * The Comments
      */
-    public void setComments(Object comments) {
+    public void setComments(String comments) {
         this.comments = comments;
     }
 
@@ -95,7 +101,7 @@ public class TipDatum {
      * @return
      * The created
      */
-    public Long getCreated() {
+    public Date getCreated() {
         return created;
     }
 
@@ -104,7 +110,7 @@ public class TipDatum {
      * @param created
      * The created
      */
-    public void setCreated(Long created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
@@ -122,7 +128,7 @@ public class TipDatum {
      * @param ownerId
      * The ownerId
      */
-    public void setOwnerId(Object ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
@@ -131,7 +137,7 @@ public class TipDatum {
      * @return
      * The coef
      */
-    public Double getCoef() {
+    public String getCoef() {
         return coef;
     }
 
@@ -140,7 +146,7 @@ public class TipDatum {
      * @param coef
      * The Coef
      */
-    public void setCoef(Double coef) {
+    public void setCoef(String coef) {
         this.coef = coef;
     }
 
@@ -203,7 +209,7 @@ public class TipDatum {
      * @return
      * The matchDate
      */
-    public Long getMatchDate() {
+    public String getMatchDate() {
         return matchDate;
     }
 
@@ -212,7 +218,7 @@ public class TipDatum {
      * @param matchDate
      * The MatchDate
      */
-    public void setMatchDate(Long matchDate) {
+    public void setMatchDate(String matchDate) {
         this.matchDate = matchDate;
     }
 
@@ -293,7 +299,7 @@ public class TipDatum {
      * @return
      * The updated
      */
-    public Object getUpdated() {
+    public Date getUpdated() {
         return updated;
     }
 
@@ -302,7 +308,7 @@ public class TipDatum {
      * @param updated
      * The updated
      */
-    public void setUpdated(Object updated) {
+    public void setUpdated(Date updated) {
         this.updated = updated;
     }
 

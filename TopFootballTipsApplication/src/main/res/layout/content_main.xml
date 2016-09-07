@@ -56,6 +56,17 @@
             android:textSize="@dimen/buttons_text_size"
             style="?android:attr/buttonBarButtonStyle"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tw_empty_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/space_big"
+        android:layout_below="@+id/upper_buttons"
+        android:layout_above="@+id/lower_buttons"
+        android:text="@string/there_is_noting_to_show"
+        android:gravity="center"
+        />
     <FrameLayout
         android:id="@+id/list_fragment_holder"
         android:layout_below="@+id/upper_buttons"
@@ -70,6 +81,7 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:padding="@dimen/space_big"
         android:weightSum="12"
         style="?android:attr/buttonStyle">
         <Button

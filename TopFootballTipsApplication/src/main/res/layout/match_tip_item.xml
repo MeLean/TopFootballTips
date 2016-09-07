@@ -33,16 +33,6 @@
             android:gravity="center"
             android:text="tw_country"
             android:textStyle="bold"/>
-
-        <ImageButton
-            android:id="@+id/btn_img_bet_site"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="2"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/betting_site_button"
-            android:gravity="center" />
     </LinearLayout>
 
     <RelativeLayout
@@ -51,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/match_header_section"
         android:layout_marginTop="@dimen/space_tiny"
-        android:background="@drawable/shape_match_details_section_bg"
         android:padding="@dimen/space_small">
 
         <LinearLayout

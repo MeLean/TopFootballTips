@@ -8,12 +8,16 @@ import java.util.List;
 
 public class TipParseObject {
 
+    public TipParseObject(){
+        //public constructor needed
+    }
+
     @SerializedName("offset")
     @Expose
     private Integer offset;
     @SerializedName("data")
     @Expose
-    private List<TipDatum> data = new ArrayList<TipDatum>();
+    private List<BestTip> data = new ArrayList<BestTip>();
     @SerializedName("nextPage")
     @Expose
     private Object nextPage;
@@ -44,7 +48,7 @@ public class TipParseObject {
      * @return
      * The data
      */
-    public List<TipDatum> getData() {
+    public List<BestTip> getData() {
         return data;
     }
 
@@ -53,7 +57,7 @@ public class TipParseObject {
      * @param data
      * The data
      */
-    public void setData(List<TipDatum> data) {
+    public void setData(List<BestTip> data) {
         this.data = data;
     }
 
